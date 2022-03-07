@@ -4,8 +4,8 @@ import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
 
 class Login extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.onInputChange = this.onInputChange.bind(this);
     this.validateLogin = this.validateLogin.bind(this);
@@ -71,7 +71,7 @@ class Login extends React.Component {
         >
           Entrar
         </button>
-        { loading && <Loading /> }
+        {loading && <Loading /> }
       </div>
     );
   }
