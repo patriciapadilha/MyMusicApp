@@ -1,14 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { createUser } from '../services/userAPI';
+import Loading from '../components/Loading';
 
 class Login extends React.Component {
+  constructor() {
+    super();
+
+    this.onInputChange = this.onInputChange.bind(this);
+    this.validateLogin = this.validateLogin.bind(this);
+    this.buttonLogin = this.buttonLogin.bind(this);
+
+    this.state = {
+      name: '',
+      loginIsDisabled: true,
+      loading: false,
+    };
+  }
+
+  onInputChange({ target }) {
+    const { name, value } = target;
+    this.setState({ [name]: value }, () => this.validateLogin());
+  }
+
+  validateLogin() {
+    const { name } = this.state;
+    const minCharacters = 3;
+    if (name.length >= minCharacters) {
+      this.setState({ loginIsDisabled: false });
+    } else {
+      this.setState({ loginIsDisabled: true });
+    }
+  }
+
+  async buttonLogin() {
+    const { name } = this.state;
+    const { history } = this.props;
+    this.setState({ loading: true });
+    await createUser({ name });
+    this.setState({ loading: false });
+    history.push('/search');
+  }
+
   render() {
     const {
       name,
       loginIsDisabled,
-      onInputChange,
-      buttonLogin,
-    } = this.props;
+      loading,
+    } = this.state;
 
     return (
       <div data-testid="page-login">
@@ -20,7 +59,7 @@ class Login extends React.Component {
             id="name-input"
             name="name"
             data-testid="login-name-input"
-            onChange={ onInputChange }
+            onChange={ this.onInputChange }
             value={ name }
           />
         </label>
@@ -28,20 +67,19 @@ class Login extends React.Component {
           disabled={ loginIsDisabled }
           type="button"
           data-testid="login-submit-button"
-          onClick={ buttonLogin }
+          onClick={ this.buttonLogin }
         >
           Entrar
         </button>
+        { loading && <Loading /> }
       </div>
     );
   }
 }
 
 Login.propTypes = {
-  name: PropTypes.string.isRequired,
-  loginIsDisabled: PropTypes.bool.isRequired,
-  onInputChange: PropTypes.func.isRequired,
-  buttonLogin: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired }).isRequired,
 };
 
 export default Login;
