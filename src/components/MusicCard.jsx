@@ -7,20 +7,11 @@ class MusicCards extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      music: props.music,
       loading: false,
       isChecked: false,
-      favorite: props.favorite,
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.getAddRemoveSong = this.getAddRemoveSong.bind(this);
-  }
-
-  componentDidMount() {
-    const { music, favorite } = this.state;
-    const isFavorite = favorite
-      .some(({ trackId }) => trackId === music.trackId);
-    this.setState({ isChecked: isFavorite });
   }
 
   onInputChange({ target: { checked } }) {
@@ -60,11 +51,11 @@ class MusicCards extends React.Component {
           </audio>
           {loading ? <Loading />
             : (
-              <label htmlFor={ music.trackId }>
+              <label htmlFor="favorite">
                 Favorita
                 <input
                   type="checkbox"
-                  id={ music.trackId }
+                  id="favorite"
                   name="favorite"
                   data-testid={ `checkbox-music-${music.trackId}` }
                   checked={ isChecked }
