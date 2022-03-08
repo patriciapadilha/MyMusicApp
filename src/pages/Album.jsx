@@ -63,9 +63,6 @@ class Album extends React.Component {
                 i !== 0 && (
                   <MusicCard
                     key={ music.trackId }
-                    trackId={ music.trackId }
-                    previewUrl={ music.previewUrl }
-                    trackName={ music.trackName }
                     music={ music }
                   />)
               ))
