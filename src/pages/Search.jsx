@@ -66,7 +66,7 @@ class Search extends React.Component {
     return (
       <div data-testid="page-search">
         <Header />
-        Pagina Search
+        Página Search
         {loading ? <Loading /> : (
           <div>
             {apiRequest && <p>{`Resultado de álbuns de: ${searchArtist}`}</p>}
