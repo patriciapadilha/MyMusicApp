@@ -38,7 +38,6 @@ class Album extends React.Component {
       albumName: response[0].collectionName,
       albumImg: response[0].artworkUrl100,
     });
-    console.log(response);
   }
 
   render() {
