@@ -25,7 +25,7 @@ class MusicCards extends React.Component {
   }
 
   async getAddRemoveSong() {
-    const { music, click } = this.props;
+    const { music, getFavorite } = this.props;
     const { isChecked } = this.state;
     this.setState({
       loading: true,
@@ -34,7 +34,7 @@ class MusicCards extends React.Component {
       await addSong(music);
     } else {
       await removeSong(music);
-      click();
+      getFavorite();
     }
     this.setState({
       loading: false,
@@ -51,7 +51,6 @@ class MusicCards extends React.Component {
       const isFavorite = favorite.some((e) => music.trackId === e.trackId);
       this.setState({ isChecked: isFavorite });
     });
-    // console.log(favorite);
   }
 
   render() {
@@ -91,6 +90,11 @@ class MusicCards extends React.Component {
 
 MusicCards.propTypes = {
   music: PropTypes.shape(),
+  getFavorite: PropTypes.func,
 }.isRequired;
+
+MusicCards.defaultProps = {
+  getFavorite: () => {},
+};
 
 export default MusicCards;

@@ -28,7 +28,6 @@ class Favorites extends React.Component {
         favorite: response,
         loading: false,
       });
-      console.log('oi Cara de Boi');
     });
   }
 
@@ -45,7 +44,7 @@ class Favorites extends React.Component {
               <MusicCards
                 key={ music.trackId }
                 music={ music }
-                click={ this.getFavorite }
+                getFavorite={ this.getFavorite }
               />)
           ))}
       </div>
