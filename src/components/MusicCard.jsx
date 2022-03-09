@@ -13,10 +13,11 @@ class MusicCards extends React.Component {
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.getAddRemoveSong = this.getAddRemoveSong.bind(this);
+    this.getFavoriteCheckbox = this.getFavoriteCheckbox.bind(this);
   }
 
   componentDidMount() {
-    this.getFavorite();
+    this.getFavoriteCheckbox();
   }
 
   onInputChange({ target: { checked } }) {
@@ -24,7 +25,7 @@ class MusicCards extends React.Component {
   }
 
   async getAddRemoveSong() {
-    const { music } = this.props;
+    const { music, click } = this.props;
     const { isChecked } = this.state;
     this.setState({
       loading: true,
@@ -33,13 +34,14 @@ class MusicCards extends React.Component {
       await addSong(music);
     } else {
       await removeSong(music);
+      click();
     }
     this.setState({
       loading: false,
     });
   }
 
-  async getFavorite() {
+  async getFavoriteCheckbox() {
     const { music } = this.props;
     const response = await getFavoriteSongs();
     this.setState({
