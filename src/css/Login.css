@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 700px;
+    height: 100vh;
     background: linear-gradient(-45deg, rgb(94, 82, 225), rgb(202, 138, 241));
     background-size: 400% 400%;
     animation: backgroundTransition 8s ease-in-out infinite;
