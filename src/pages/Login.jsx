@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import '../css/Login.css';
+import headphone from '../img/headphone.png';
 
 class Login extends React.Component {
   constructor(props) {
@@ -50,8 +52,8 @@ class Login extends React.Component {
     } = this.state;
 
     return (
-      <div data-testid="page-login">
-        Pagina Login
+      <main className="container-main" data-testid="page-login">
+        <img src={ headphone } alt="fone de ouvido azul"/>
         <label htmlFor="name-input">
           <input
             type="text"
@@ -68,11 +70,12 @@ class Login extends React.Component {
           type="button"
           data-testid="login-submit-button"
           onClick={ this.buttonLogin }
+          className="btn-1"
         >
           Entrar
         </button>
         {loading && <Loading /> }
-      </div>
+      </main>
     );
   }
 }

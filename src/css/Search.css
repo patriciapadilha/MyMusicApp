@@ -1,0 +1,89 @@
+.container-search {
+    background-image: url('../img/fundo.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 40%;
+    width: 100vw;
+    height: 700px;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-end;
+    width: 300px;
+    margin-left: 200px;
+    margin-top: 50px;
+}
+
+.search input {
+    margin-bottom: 20px;
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    border: 0.5px solid rgb(178, 176, 176);
+}
+
+.search p {
+    color: gray;
+    letter-spacing: 2px;
+}
+
+.btn-2 {
+    width: 100px;
+    height: 35px;
+    border-radius: 15px;
+    background-color: rgb(191, 191, 252);
+    border: none;
+}
+
+
+
+.btn-2:hover {
+    background-color: rgb(66, 66, 255);
+    color: rgb(228, 228, 228);
+}
+
+.albuns-wrapper {
+    margin-top: 50px;
+    width: 400px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    margin-bottom: 50px;
+}
+
+.albuns {
+   display: flex;
+   flex-direction: row;
+}
+
+.album-list {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 20px;
+    scroll-snap-align: start;
+}
+
+.album-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    color: gray; 
+    padding: 10px;  
+}
+
+.album-card img {
+    margin-bottom: 10px;
+}
+
+.album-card:hover {
+    background-color: rgb(187, 187, 254);
+}
+

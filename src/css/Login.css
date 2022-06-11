@@ -1,0 +1,54 @@
+.container-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    background: linear-gradient(-45deg, rgb(94, 82, 225), rgb(202, 138, 241));
+    background-size: 400% 400%;
+    animation: backgroundTransition 8s ease-in-out infinite;
+}
+
+@keyframes backgroundTransition {
+    0% {
+        background-position: 0% 80%;
+    }
+    50% {
+        background-position: 80% 100%;
+    }
+    100% {
+        background-position: 0% 90%;
+    }
+}
+
+.container-main label {
+    margin-bottom: 20px;
+}
+
+.container-main input {
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+}
+
+.container-main img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+.container-main button {
+    background: linear-gradient(45deg, pink, blue);
+    border-radius: 15px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+
+
+
