@@ -9,9 +9,10 @@
 
 
 ### Sobre o desenvolvimento:
-- Foi um projeto desenvolvido individualmente, com o usado de uma API de música;
+Foi um projeto desenvolvido individualmente, usado uma API de música;
 
-- Nesse projeto foram necessárias as seguintes habilidade:
+Nesse projeto foram necessárias as seguintes habilidade:
+
 * Fazer requisições e consumir dados vindos de uma API;
 
 * Utilizar os ciclos de vida de um componente React;
