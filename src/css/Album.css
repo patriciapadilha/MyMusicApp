@@ -1,0 +1,27 @@
+.main-album {
+  margin-left: 20px;
+  color: rgb(105, 105, 105);
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-album img {
+   width: 200px;
+   margin-bottom: 20px;
+}
+
+.music-play {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 30px;
+}
+
+.music-play p {
+    font-weight: 700;
+    color: rgb(52, 52, 96);
+}

@@ -40,6 +40,7 @@
 }
 
 .links a {
+    color: rgb(52, 52, 96);
     text-decoration: none;
     margin-right: 30px;
     letter-spacing: 2px;
@@ -49,4 +50,17 @@ a:hover {
     font-size: larger;
 }
 
+@media (max-width: 800px) {
+    .header {
+        width: 100%;
+    }
+    
+    .links {
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
 
+}

@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Loading from '../components/Loading';
 import MusicCards from '../components/MusicCard';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import '../css/Favorites.css';
 
 class Favorites extends React.Component {
   constructor(props) {
@@ -36,17 +37,20 @@ class Favorites extends React.Component {
     return (
       <div data-testid="page-favorites">
         <Header />
-        Página Favorites
-        {loading && <Loading />}
-        {favorite
-          .map((music, i) => (
-            i !== 0 && (
-              <MusicCards
-                key={ music.trackId }
-                music={ music }
-                getFavorite={ this.getFavorite }
-              />)
-          ))}
+        <div className='main-favorites'>
+          <p>Músicas Favoritas</p>
+          {loading && <Loading />}
+          {favorite
+            .map((music, i) => (
+              i !== 0 && (
+                <MusicCards
+                  key={ music.trackId }
+                  music={ music }
+                  getFavorite={ this.getFavorite }
+                />)
+            ))}
+
+        </div>
       </div>
     );
   }

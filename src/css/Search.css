@@ -40,7 +40,6 @@
 }
 
 
-
 .btn-2:hover {
     background-color: rgb(66, 66, 255);
     color: rgb(228, 228, 228);
@@ -85,5 +84,24 @@
 
 .album-card:hover {
     background-color: rgb(187, 187, 254);
+}
+
+@media (max-width: 800px) {
+    .search {
+        align-content: center;
+        margin-top: 50px;
+        margin-left: 0px;
+    }
+
+    .albuns-wrapper {
+        margin-top: 100px;
+        margin-left: 150px;
+    }
+
+    .album-list {
+        width: 230px;
+        margin-left: 20px;
+        padding: 0px;
+    }
 }
 

@@ -1,0 +1,12 @@
+.main-favorites {
+   color: rgb(105, 105, 105);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.main-favorites p {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
